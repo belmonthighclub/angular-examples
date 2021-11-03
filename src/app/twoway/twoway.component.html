@@ -1,0 +1,25 @@
+<!-- ngModel and other form components require FormsModule to be imported in app.module.ts -->
+<div>
+    <!-- Forms should be labeled with the form element, makes organizing easier -->
+    <!-- (ngSubmit) will run when a button is pressed (should be labeled with type="submit") -->
+    <form name="exampleForm" (ngSubmit)="submit()">
+        <div class="form-group">
+            <!-- <label> creates a label for the element with the 'name' specified -->
+            <!-- for example this label is for the input at line 11 -->
+            <label for="p1">Property 1 Edit</label>
+            <!-- [()] = bidirectional -->
+            <!-- [(ngModel)] makes it so the value can be changed both in the script and by the user -->
+            <input type="text" name="p1" [(ngModel)]="obj.property1">
+        </div>
+        <div class="form-group">
+            <label for="p2">Property 2 Edit</label>
+            <input type="text" name="p2" [(ngModel)]="obj.property2">
+        </div>
+
+        <!-- Because of (ngSubmit), (click) is not needed here -->
+        <button class="submitBtn" type="submit">Submit</button>
+    </form>
+
+    <!-- To demonstrate changing values in the code -->
+    <button (click)="resetProps()">Reset Properties</button>
+</div>

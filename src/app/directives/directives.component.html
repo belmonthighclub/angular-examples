@@ -1,0 +1,21 @@
+<div>
+    <!-- *ngIf only displays the component if the expression is true -->
+    <p *ngIf="toggle">This text will dissapear if you press the button</p>
+    <button (click)="toggleToggle()">Toggle</button>
+</div>
+<div class="margin">
+    <!-- [ngSwitch]/*ngSwitchCase work exactly like a switch/case statement -->
+    <div [ngSwitch]="currentStage">
+        <p *ngSwitchCase="1">Stage one</p>
+        <p *ngSwitchCase="2">Stage two!</p>
+        <p *ngSwitchCase="3">Stage three?</p>
+        <p *ngSwitchCase="4">Stage Four</p>
+        <p *ngSwitchCase="5">Stage FIVE!</p>
+        <p *ngSwitchDefault>How'd you get here</p>
+    </div>
+    
+    <!-- *ngFor makes copies of components for every member in an array, in this case 'actions' -->
+    <!-- Like in a for/of loop, every copy has its own 'action' (name can be anything) value -->
+    <!-- Note: action only exists withing the component and all its children -->
+    <button *ngFor="let action of actions" (click)="setStage(action)">{{action}}</button>
+</div>

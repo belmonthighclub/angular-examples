@@ -1,0 +1,13 @@
+<div>
+    <div>
+        <label for="in">Child Input Value?</label><br>
+        <input name="in" [(ngModel)]="inputValue">
+    </div>
+
+    <!-- You can't give a child component a class or style. Solution: use a div -->
+    <!-- I highlighted the child component with a red border -->
+    <div class="margin child">
+        <!-- This tag is the 'selector' as specified in @Component of the .ts file -->
+        <app-io-child [someInput]="inputValue" (emitter)="processEmit($event)"></app-io-child>
+    </div>
+</div>

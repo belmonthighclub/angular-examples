@@ -1,0 +1,7 @@
+<div>
+    <h1>The input is: {{someInput}}</h1>
+    <!-- type="text" is optional, but good for readability -->
+    <!-- [(ngModel)] also works outside of forms -->
+    <input type="text" [(ngModel)]="outValue">
+    <button (click)="sendOutput()">Send Output</button>
+</div>

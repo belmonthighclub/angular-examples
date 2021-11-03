@@ -1,0 +1,14 @@
+<div>
+    <!-- This text depends on the value of the variable in the script -->
+    <h1>{{heading}}</h1>
+    <h3>{{smallHeading}}</h3>
+    <p>{{text}}</p>
+    <p>{{time}}</p>
+</div>
+<div class="margin">
+    <!-- () = html to script; [] = script to html -->
+    <!-- (click) executes the function assigned in the script; [disabled] disables the button depending on 'buttonDisable' in the script -->
+    <button class="btnSpace" (click)="changeText()" [disabled]="buttonDisable">Change Text</button>
+    <button class="btnSpace" (click)="updateTime()" [disabled]="buttonDisable">Update Time</button>
+    <button class="btnSpace" (click)="toggleButtons()">Disable/Enable Buttons</button>
+</div>
